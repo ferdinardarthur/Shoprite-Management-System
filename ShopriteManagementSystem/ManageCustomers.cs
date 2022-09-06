@@ -81,6 +81,22 @@ namespace ShopriteManagementSystem
             Customerid.Text = CustomersGV.SelectedRows[0].Cells[0].Value.ToString();
             CustomernameTb.Text = CustomersGV.SelectedRows[0].Cells[1].Value.ToString();
             CustomerPhoneTb.Text = CustomersGV.SelectedRows[0].Cells[2].Value.ToString();
+            Con.Open();
+            SqlDataAdapter sda = new SqlDataAdapter("select Count(*) from OrderTb1 where CustId = " + Customerid.Text + "", Con);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            OrderLabel.Text = dt.Rows[0][0].ToString();
+            SqlDataAdapter sda1 = new SqlDataAdapter("select Sum(TotalAmt) from OrderTb1 where CustId = " + Customerid.Text + "", Con);
+
+            DataTable dt1 = new DataTable();
+            sda1.Fill(dt1);
+            AmountLabel.Text = dt1.Rows[0][0].ToString();
+            SqlDataAdapter sda2 = new SqlDataAdapter("select Max(OrderDate) from OrderTb1 where CustId = " + Customerid.Text + "", Con);
+
+            DataTable dt2 = new DataTable();
+            sda2.Fill(dt2);
+            DateLabel.Text = dt2.Rows[0][0].ToString();
+            Con.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -102,7 +118,9 @@ namespace ShopriteManagementSystem
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            HomeForm home = new HomeForm();
+            home.Show();
+            this.Hide();
         }
 
         private void label9_Click(object sender, EventArgs e)
@@ -112,7 +130,7 @@ namespace ShopriteManagementSystem
 
         private void ManageCustomers_Load(object sender, EventArgs e)
         {
-
+            populate();
         }
     }
 }

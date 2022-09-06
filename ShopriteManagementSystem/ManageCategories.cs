@@ -101,5 +101,12 @@ namespace ShopriteManagementSystem
             CatIdTb.Text = CategoriesGV.SelectedRows[0].Cells[0].Value.ToString();
             CatNameTb.Text = CategoriesGV.SelectedRows[0].Cells[1].Value.ToString();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            HomeForm home = new HomeForm();
+            home.Show();
+            this.Hide();
+        }
     }
 }

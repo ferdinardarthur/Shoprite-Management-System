@@ -46,13 +46,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.OrderLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
+            this.AmountLabel = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label12 = new System.Windows.Forms.Label();
+            this.DateLabel = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersGV)).BeginInit();
@@ -255,12 +255,25 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Black;
-            this.panel3.Controls.Add(this.label9);
+            this.panel3.Controls.Add(this.OrderLabel);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Location = new System.Drawing.Point(370, 1285);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(400, 230);
             this.panel3.TabIndex = 27;
+            // 
+            // OrderLabel
+            // 
+            this.OrderLabel.AutoSize = true;
+            this.OrderLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.OrderLabel.ForeColor = System.Drawing.Color.White;
+            this.OrderLabel.Location = new System.Drawing.Point(90, 85);
+            this.OrderLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.OrderLabel.Name = "OrderLabel";
+            this.OrderLabel.Size = new System.Drawing.Size(200, 65);
+            this.OrderLabel.TabIndex = 3;
+            this.OrderLabel.Text = "Orders";
+            this.OrderLabel.Click += new System.EventHandler(this.label9_Click);
             // 
             // label7
             // 
@@ -274,40 +287,27 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "Orders Count";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(90, 85);
-            this.label9.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(200, 65);
-            this.label9.TabIndex = 3;
-            this.label9.Text = "Orders";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.AmountLabel);
             this.panel4.Controls.Add(this.label11);
             this.panel4.Location = new System.Drawing.Point(1022, 1285);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(400, 230);
             this.panel4.TabIndex = 28;
             // 
-            // label10
+            // AmountLabel
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(100, 74);
-            this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(238, 65);
-            this.label10.TabIndex = 3;
-            this.label10.Text = "Amount";
+            this.AmountLabel.AutoSize = true;
+            this.AmountLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AmountLabel.ForeColor = System.Drawing.Color.White;
+            this.AmountLabel.Location = new System.Drawing.Point(100, 74);
+            this.AmountLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.AmountLabel.Name = "AmountLabel";
+            this.AmountLabel.Size = new System.Drawing.Size(238, 65);
+            this.AmountLabel.TabIndex = 3;
+            this.AmountLabel.Text = "Amount";
             // 
             // label11
             // 
@@ -324,24 +324,24 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.DimGray;
-            this.panel5.Controls.Add(this.label12);
+            this.panel5.Controls.Add(this.DateLabel);
             this.panel5.Controls.Add(this.label13);
             this.panel5.Location = new System.Drawing.Point(1678, 1285);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(400, 230);
             this.panel5.TabIndex = 29;
             // 
-            // label12
+            // DateLabel
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(100, 74);
-            this.label12.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(158, 65);
-            this.label12.TabIndex = 3;
-            this.label12.Text = "Date";
+            this.DateLabel.AutoSize = true;
+            this.DateLabel.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DateLabel.ForeColor = System.Drawing.Color.White;
+            this.DateLabel.Location = new System.Drawing.Point(100, 74);
+            this.DateLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.DateLabel.Name = "DateLabel";
+            this.DateLabel.Size = new System.Drawing.Size(158, 65);
+            this.DateLabel.TabIndex = 3;
+            this.DateLabel.Text = "Date";
             // 
             // label13
             // 
@@ -416,13 +416,13 @@
         private Button button1;
         private Panel panel2;
         private Panel panel3;
-        private Label label9;
+        private Label OrderLabel;
         private Label label7;
         private Panel panel4;
-        private Label label10;
+        private Label AmountLabel;
         private Label label11;
         private Panel panel5;
-        private Label label12;
+        private Label DateLabel;
         private Label label13;
     }
 }

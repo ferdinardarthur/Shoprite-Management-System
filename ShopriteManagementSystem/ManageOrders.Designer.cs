@@ -38,9 +38,9 @@
             this.OrderIdTb = new System.Windows.Forms.RichTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CustId = new System.Windows.Forms.RichTextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.orderdate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.CustName = new System.Windows.Forms.RichTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ProductsGV = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,6 +50,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.OrderGv = new System.Windows.Forms.DataGridView();
             this.label10 = new System.Windows.Forms.Label();
+            this.TotAmount = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustomersGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProductsGV)).BeginInit();
@@ -173,12 +177,12 @@
             this.CustId.TabIndex = 49;
             this.CustId.Text = "";
             // 
-            // dateTimePicker1
+            // orderdate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(310, 1367);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(422, 39);
-            this.dateTimePicker1.TabIndex = 51;
+            this.orderdate.Location = new System.Drawing.Point(310, 1367);
+            this.orderdate.Name = "orderdate";
+            this.orderdate.Size = new System.Drawing.Size(422, 39);
+            this.orderdate.TabIndex = 51;
             // 
             // label6
             // 
@@ -191,14 +195,14 @@
             this.label6.TabIndex = 53;
             this.label6.Text = "CustomerName:";
             // 
-            // richTextBox2
+            // CustName
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(282, 1228);
-            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(535, 77);
-            this.richTextBox2.TabIndex = 52;
-            this.richTextBox2.Text = "";
+            this.CustName.Location = new System.Drawing.Point(282, 1228);
+            this.CustName.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.CustName.Name = "CustName";
+            this.CustName.Size = new System.Drawing.Size(535, 77);
+            this.CustName.TabIndex = 52;
+            this.CustName.Text = "";
             // 
             // label7
             // 
@@ -302,15 +306,65 @@
             this.label10.Location = new System.Drawing.Point(1428, 1555);
             this.label10.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(354, 52);
+            this.label10.Size = new System.Drawing.Size(341, 52);
             this.label10.TabIndex = 63;
-            this.label10.Text = "CUSTOMERS LIST";
+            this.label10.Text = "TOTAL AMOUNT";
+            // 
+            // TotAmount
+            // 
+            this.TotAmount.AutoSize = true;
+            this.TotAmount.Font = new System.Drawing.Font("Century Gothic", 16.125F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TotAmount.ForeColor = System.Drawing.Color.Black;
+            this.TotAmount.Location = new System.Drawing.Point(1765, 1555);
+            this.TotAmount.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.TotAmount.Name = "TotAmount";
+            this.TotAmount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.TotAmount.Size = new System.Drawing.Size(66, 49);
+            this.TotAmount.TabIndex = 64;
+            this.TotAmount.Text = "Rs";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(126, 1470);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(208, 47);
+            this.button2.TabIndex = 65;
+            this.button2.Text = "INSERT ORDER";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(375, 1470);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(208, 47);
+            this.button3.TabIndex = 66;
+            this.button3.Text = "VIEW ORDERS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(282, 1555);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(150, 47);
+            this.button4.TabIndex = 67;
+            this.button4.Text = "HOME";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // ManageOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(2378, 1830);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.TotAmount);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.OrderGv);
             this.Controls.Add(this.button1);
@@ -321,8 +375,8 @@
             this.Controls.Add(this.ProductsGV);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.CustName);
+            this.Controls.Add(this.orderdate);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.CustId);
             this.Controls.Add(this.label4);
@@ -356,9 +410,9 @@
         private RichTextBox OrderIdTb;
         private Label label5;
         private RichTextBox CustId;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker orderdate;
         private Label label6;
-        private RichTextBox richTextBox2;
+        private RichTextBox CustName;
         private Label label7;
         private DataGridView ProductsGV;
         private Panel panel2;
@@ -368,5 +422,9 @@
         private Button button1;
         private DataGridView OrderGv;
         private Label label10;
+        private Label TotAmount;
+        private Button button2;
+        private Button button3;
+        private Button button4;
     }
 }
